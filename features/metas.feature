@@ -10,7 +10,7 @@ Then I can see the goal "Read chapter 10" for the student with CPF "683" in the 
 
 Scenario: Marking a learning goal as achieved
 Given I am at the learning goals page
-Given I can see the goal "Read chapter 10" for the student with CPF "683" as not achieved
+Given I can see the goal "Read chapter 12" for the student with CPF "683" as not achieved
 When I mark the goal "Read chapter 12" for the student with CPF "683" as achieved
 Then I can see the goal "Read chapter 12" for the student with CPF "683" as achieved
 
