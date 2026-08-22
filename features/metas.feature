@@ -1,3 +1,15 @@
 Feature: As a professor
          I want to register learning goals for my students
          So that I can track their progress during the course
+
+Scenario: Registering a learning goal for a student
+Given I am at the learning goals page
+Given I cannot see the goal "Read chapter 10" for the student with CPF "683"
+When I try to register the goal "Read chapter 10" for the student with CPF "683"
+Then I can see the goal "Read chapter 10" for the student with CPF "683" in the learning goals list
+
+Scenario: Marking a learning goal as achieved
+Given I am at the learning goals page
+Given I can see the goal "Read chapter 10" for the student with CPF "683" as not achieved
+When I mark the goal "Read chapter 10" for the student with CPF "683" as achieved
+Then I can see the goal "Read chapter 10" for the student with CPF "683" as achieved
