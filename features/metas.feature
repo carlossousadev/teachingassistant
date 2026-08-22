@@ -32,3 +32,9 @@ Feature: Learning goals management in Teaching Assistant
       And I can see the goal "Read chapter 12" for the student with CPF "683"
       When I update the goal description to "Read chapters 12 and 13" for the student with CPF "683"
       Then I can see the goal "Read chapters 12 and 13" for the student with CPF "683" in the learning goals list
+
+  Scenario: Removing a learning goal
+      Given I am at the learning goals page
+      And I can see the goal "Read chapter 12" for the student with CPF "683"
+      When I remove the goal "Read chapter 12" for the student with CPF "683"
+      Then I cannot see the goal "Read chapter 12" for the student with CPF "683" in the learning goals list
