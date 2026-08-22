@@ -27,3 +27,15 @@ Feature: Learning goals management in Teaching Assistant
       When I try to register the goal "" for the student with CPF "683"
       Then I can see the error message "Goal description cannot be empty"
       And the goal is not added to the learning goals list
+
+  Scenario: Updating the description of a learning goal
+      Given I am at the learning goals page
+      And I can see the goal "Read chapter 12" for the student with CPF "683"
+      When I update the goal description to "Read chapters 12 and 13" for the student with CPF "683"
+      Then I can see the goal "Read chapters 12 and 13" for the student with CPF "683" in the learning goals list
+
+  Scenario: Removing a learning goal
+      Given I am at the learning goals page
+      And I can see the goal "Read chapter 12" for the student with CPF "683"
+      When I remove the goal "Read chapter 12" for the student with CPF "683"
+      Then I cannot see the goal "Read chapter 12" for the student with CPF "683" in the learning goals list
