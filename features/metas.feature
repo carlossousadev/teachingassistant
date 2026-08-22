@@ -19,3 +19,8 @@ Given I am at the learning goals page
 Given I cannot see a student with CPF "999" in the students list
 When I try to register the goal "Read chapter 10" for the student with CPF "999"
 Then I can see the error message "Student not found"
+
+Scenario: Registering a learning goal with an empty description
+Given I am at the learning goals page
+When I try to register the goal "" for the student with CPF "683"
+Then I can see the error message "Goal description cannot be empty"
