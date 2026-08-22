@@ -13,3 +13,9 @@ Given I am at the learning goals page
 Given I can see the goal "Read chapter 10" for the student with CPF "683" as not achieved
 When I mark the goal "Read chapter 12" for the student with CPF "683" as achieved
 Then I can see the goal "Read chapter 12" for the student with CPF "683" as achieved
+
+Scenario: Registering a learning goal for a non registered student
+Given I am at the learning goals page
+Given I cannot see a student with CPF "999" in the students list
+When I try to register the goal "Read chapter 10" for the student with CPF "999"
+Then I can see the error message "Student not found"
