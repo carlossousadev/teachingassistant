@@ -41,3 +41,8 @@ Feature: Learning goals management in Teaching Assistant
       When I remove the goal "Read chapter 12" for the student with CPF "683"
       And I confirm the removal
       Then I cannot see the goal "Read chapter 12" for the student with CPF "683" in the learning goals list
+
+  Scenario: Listing all learning goals of a student
+      Given I am at the learning goals page
+      When I search for the student with CPF "683"
+      Then I can see all learning goals registered for that student
