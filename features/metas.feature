@@ -52,3 +52,8 @@ Feature: Learning goals management in Teaching Assistant
       And I can see the goal "Read chapter 12" for the student with CPF "683"
       When I try to register the goal "Read chapter 12" for the student with CPF "683"
       Then I can see the error message "Goal already registered for this student"
+
+  Scenario: Registering a learning goal with a past due date
+      Given I am at the learning goals page
+      When I try to register the goal "Read chapter 14" with due date "2020-01-01" for the student with CPF "683"
+      Then I can see the error message "Due date cannot be in the past"
