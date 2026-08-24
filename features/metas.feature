@@ -46,3 +46,9 @@ Feature: Learning goals management in Teaching Assistant
       Given I am at the learning goals page
       When I search for the student with CPF "683"
       Then I can see all learning goals registered for that student
+
+  Scenario: Registering a duplicated learning goal
+      Given I am at the learning goals page
+      And I can see the goal "Read chapter 12" for the student with CPF "683"
+      When I try to register the goal "Read chapter 12" for the student with CPF "683"
+      Then I can see the error message "Goal already registered for this student"
