@@ -1,3 +1,4 @@
+@learning-goals
 Feature: Learning goals management in Teaching Assistant
 
   As a professor
